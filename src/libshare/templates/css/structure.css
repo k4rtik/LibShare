@@ -13,6 +13,14 @@
 body{
   background:#eff3f6;
 }
+
+html {
+	margin: 0;
+	padding: 0;
+	background: #eff3f6 url('../4.jpg') center top repeat;
+}
+
+
 .box
 {
     background:#fefefe;
@@ -211,3 +219,130 @@ footer#main{
 	font:normal 11px/16px Arial, Helvetica, sans-serif;
 	width:100%;
 }
+
+    /*--navigation wrapper--*/  
+    #navwrapper {  
+        margin:0 auto;   
+        background-color: #111;  
+    }  
+      
+      
+    #nav {  
+        font-family: Arial, Helvetica, sans-serif;  
+        font-size:12px;   
+        padding-top:4px;  
+    }  
+      
+    #nav, #nav ul {  
+        padding: 0;  
+        margin: 0;  
+        list-style: none;  
+        font-family: Arial, Helvetica, sans-serif;  
+    }  
+      
+    /*--main nav links style--*/  
+    #nav a {  
+        display:block;  
+        padding:7px 7px 7px 7px;   
+        color:#ccc;   
+        text-decoration:none;  
+    }  
+      
+    #nav a.dmenu {  
+      
+    }  
+      
+    #nav a.dmenu:hover {  
+        color:#3366CC !important;  
+        background-color: #fff !important;  
+    }  
+      
+    #nav li {  
+        float: left;  
+    }  
+      
+    #nav li {position: relative;}  
+      
+    /* hide from IE, mac */  
+    #nav li {position: static; width: auto;}  
+    /* end hiding from IE5 mac */  
+      
+    /*--drop down menu styling--*/  
+    #nav li ul {  
+        position: absolute;  
+        display: none;  
+        margin-left:-1px;  
+        padding-bottom:10px;  
+        background-color: #FFFFFF;  
+        border: 1px solid #bbb;  
+        border-top:none;  
+        -moz-box-shadow: 0 0 5px #ddd;  
+        -webkit-box-shadow: 0 0 5px #ddd;  
+        box-shadow: 0 0 5px #ddd;  
+        /*--make it top of all the elements on page, so that it can be visible--*/  
+        z-index:5000;   
+    }  
+      
+    #nav li:hover a, #nav a:focus,  
+    #nav a:active {  
+        padding:7px 7px 7px 7px;          
+        color:#fff;   
+        background:#444;   
+        text-decoration:none;   
+    }  
+      
+    #nav li ul, #nav ul li  {  
+        width: 10em;  
+    }  
+      
+    /*--drop down menu styling is different from main nav, strict rule--*/  
+    #nav ul li a  {  
+        color: #3366CC !important;  
+        border-right: 0;  
+    }  
+    #nav ul li a:hover  {  
+        color:#3366CC !important;  
+        background-color: #eef3fb !important;  
+        border-right: 0;  
+    }  
+      
+    /*--the selected, current item in the navigation menu--*/  
+    #nav a.current{  
+        color:#fff;  
+        font-weight:bold;   
+        background:#2D2D2D;   
+        text-decoration:none;   
+        border-top:2px solid #C33;  
+        padding-bottom:5px; /*--removing 2px border from 7px padding--*/  
+    }  
+      
+    #nav a.current:hover{  
+        padding-bottom:5px; /*--removing 2px border from 7px padding--*/  
+    }  
+      
+    #nav li:hover ul {  
+        display: block;  
+    }  
+      
+    #nav li:hover ul a{  
+        color: #000000;  
+        background-color: transparent;  
+    }  
+      
+    #nav ul a:hover {  
+        background-color: #606060!important;  
+        color: #FFFFFF !important;  
+    }  
+      
+    /*--used in drop down menu items--*/  
+      
+     
+    /*--for the left navigation menu--*/  
+    .floatleft{float:left;}   
+      
+    /*--for the right options navigation menu--*/  
+    .floatright{float:right;}  
+      
+    /*--clear all floating, left and right--*/  
+    .clear{clear:both;}
+
