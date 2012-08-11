@@ -1,5 +1,5 @@
 # Django settings for libshare project.
-os.path
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
