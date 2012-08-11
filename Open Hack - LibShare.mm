@@ -1,6 +1,6 @@
 <map version="0.9.0">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1344661652987" ID="ID_887671826" MODIFIED="1344661665352" TEXT="Open Hack - LibShare" VGAP="68">
+<node CREATED="1344661652987" ID="ID_887671826" MODIFIED="1344665424195" TEXT="Open Hack - LibShare" VGAP="68">
 <node CREATED="1336112665155" HGAP="17" ID="ID_1103257703" MODIFIED="1344661780660" POSITION="left" TEXT="Problem" VSHIFT="-13">
 <icon BUILTIN="help"/>
 <node CREATED="1336112733416" ID="ID_1778784254" MODIFIED="1336112777006" TEXT="Only hard copies of books are being considered."/>
@@ -26,8 +26,8 @@
 <node CREATED="1336113148903" ID="ID_1962104009" MODIFIED="1336113220652" TEXT="Faceted, multilingual, consider Apache Solr, Lucene etc."/>
 </node>
 </node>
-<node CREATED="1344661870824" ID="ID_891204424" MODIFIED="1344661885355" POSITION="right" TEXT="Features to focus on">
-<node CREATED="1344661886896" ID="ID_150263551" MODIFIED="1344662199541">
+<node CREATED="1344661870824" ID="ID_891204424" MODIFIED="1344665508711" POSITION="right" TEXT="Features to focus on">
+<node CREATED="1344661886896" ID="ID_150263551" MODIFIED="1344665418094">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -35,7 +35,7 @@
   <body>
     <ul>
       <li>
-        Search a book using ISBN, return metadata (cover, author, desc, year, pages etc) about book
+        Search a book using ISBN, return metadata (cover, author, desc, year, pages etc) about book; both mobile and web interface
       </li>
       <li>
         User registration, location/community/network
@@ -45,6 +45,24 @@
       </li>
       <li>
         Borrow a book - expected return date
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1344665509569" ID="ID_1627663795" MODIFIED="1344665949476">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <ul>
+      <li>
+        Trending books (get stats of what people have, so its possible to gauge not just what people buy but what people also wnat to share)
+      </li>
+      <li>
+        Add karmas to draw in people (+points when lend; -points when borrow)
       </li>
     </ul>
   </body>
