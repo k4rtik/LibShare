@@ -27,7 +27,7 @@
 </node>
 </node>
 <node CREATED="1344661870824" ID="ID_891204424" MODIFIED="1344665508711" POSITION="right" TEXT="Features to focus on">
-<node CREATED="1344661886896" ID="ID_150263551" MODIFIED="1344665418094">
+<node CREATED="1344661886896" ID="ID_150263551" MODIFIED="1344666092472">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -48,10 +48,10 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
+<icon BUILTIN="full-1"/>
 </node>
-<node CREATED="1344665509569" ID="ID_1627663795" MODIFIED="1344665949476">
+<node CREATED="1344665509569" ID="ID_1627663795" MODIFIED="1344666095620">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -66,8 +66,8 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
+<icon BUILTIN="full-2"/>
 </node>
 </node>
 </node>
