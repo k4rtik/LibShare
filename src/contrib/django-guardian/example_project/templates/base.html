@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
+<head>
+    {% block head %}
+    <title>{% block title %}django-guardian - example project{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    {% block head-css %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" />
+    {% endblock %}
+    {% block head-js %}{% endblock %}
+    {% block extra-head %}{% endblock %}
+    {% endblock %}
+</head>
+
+
+<body{% block body-attrs %}{% endblock %}>
+{% block body %}
+    <div id="body-content">
+        {# Message Box #}
+        {# For new message framework, available since Django 1.2 #}
+        {% block messages-block %}
+        {% if messages %}
+        <ul id="global-messages" class="messages">
+            {% for message in messages %}
+            <li class="message message-{% if message.tags %}{{ message.tags }}{% else %}info{% endif %}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endblock messages-block %}
+
+        {% block content %}
+        {% endblock content %}
+
+    </div>
+    {# Footer #}
+    <div id="footer-wrapper">
+        {% block footer-wrapper %}
+        <div id="footer">
+            {% block footer %}
+            <p>{% now "Y" %} &copy; <span class="author">Lukasz Balcerzak</span></p>
+            {% endblock %}
+        </div>
+        {% endblock footer-wrapper %}
+    </div>
+{% endblock body %}
+
+{% block extra-body %}{% endblock %}
+{% block end-body %}{% endblock %}
+</body>
+</html>
+

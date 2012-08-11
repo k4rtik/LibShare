@@ -1,0 +1,6 @@
+include LICENSE
+include AUTHORS
+include README.rst
+include CHANGES.rst
+recursive-include docs *
+prune docs/_build
