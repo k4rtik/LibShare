@@ -19,12 +19,12 @@ class Author(models.Model):
         ordering = ['first_name']
 
 class Book(models.Model):
-    isbn13 = models.CharField(max_length=13, primary_key=True)
+    isbn13 = models.CharField("ISBN-13", max_length=13, primary_key=True)
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author)
     year = models.CharField(max_length=4)
     publisher = models.ForeignKey(Publisher)
-    desc = models.TextField(blank=True)
+    desc = models.TextField("Description", blank=True)
     def __unicode__(self):
         return self.title
     class Meta:
