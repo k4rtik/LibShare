@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class Publisher(models.Model):
-    name = models.CharField(max_length=30)
-    website = models.URLField()
+    name = models.CharField(max_length=50)
+    website = models.URLField(blank=True)
     def __unicode__(self):
         return self.name
     class Meta:
@@ -22,8 +22,9 @@ class Book(models.Model):
     isbn13 = models.CharField(max_length=13, primary_key=True)
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author)
+    year = models.CharField(max_length=4)
     publisher = models.ForeignKey(Publisher)
-    desc = models.TextField()
+    desc = models.TextField(blank=True)
     def __unicode__(self):
         return self.title
     class Meta:
