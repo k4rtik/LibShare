@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
 <form class="box login">
 	<fieldset class="boxBody">
 	  <label>Username</label>
@@ -30,12 +31,29 @@
 	  <input type="password" tabindex="2" placeholder="password" required>
  	</fieldset>
 	<footer>
-	  <label><input type="checkbox" tabindex="3">I accept terms and conditions.</label>
+	  <label><input type="checkbox" tabindex="3">I accept!</label>
 	  <input type="submit" class="btnRegister" value="Register!" tabindex="4">
 	</footer>
 </form>
 <footer id="main">
   <a href="">Share your Books!</a> | <a href="">Team 15</a>
 </footer>
+<div id="navwrapper">  
+      
+        <ul id="nav" class="floatleft">  
+            <li><a href="#">Kartik</a></li>  
+            <li><a href="#">My Book Requests</a></li>       
+              
+        </ul>  
+          
+        <ul id="nav" class="floatright">  
+            <li><a href="#">Edit Profile</a></li>  
+            <!--<li><a href="#">username@yahoo.com</a></li>-->  
+            <li><a href="#">Logout</a></li>  
+        </ul>  
+          
+        <br class="clear">  
+      
+    </div>
 </body>
 </html>
