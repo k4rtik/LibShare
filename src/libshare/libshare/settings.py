@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'guardian',
     'easy_thumbnails',
     'accounts',
+    'books',
 )
 
 # A sample logging configuration. The only tangible logging
