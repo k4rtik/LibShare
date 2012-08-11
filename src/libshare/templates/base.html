@@ -1,16 +1,18 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<title>LibShare!</title>
+<title>{% block title %}LibShare{% endblock %}</title>
 <meta charset="UTF-8" />
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/structure_base.css">
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/reset.css">
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/structure_base.css">
 </head>
 
 <body>
-
+<div id="content">
+{% block content %}{% endblock %}
+</div>
 <footer id="main">
-  <a href="">Share your Books!</a> | <a href="">Team 15</a>
+  <a href="/">Share your books!</a> | <a href="http://openhackindia2012.hacker.yahoo.net/#groups/72566">Team Fifteen</a>
 </footer>
 <div id="navwrapper">  
       
@@ -21,7 +23,7 @@
         </ul>  
           
         <ul id="nav" class="floatright">  
-            <li><a href="#">Edit Profile</a></li>  
+            <li><a href="">Edit Profile</a></li>  
             <!--<li><a href="#">username@yahoo.com</a></li>-->  
             <li><a href="#">Logout</a></li>  
         </ul>  
