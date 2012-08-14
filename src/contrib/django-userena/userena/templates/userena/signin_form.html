@@ -2,13 +2,13 @@
 {% load staticfiles %}
 {% load i18n %}
 {% load url from future %}
-<head>
-<link rel="stylesheet" type="text/css" href="{% static "/css/structure.css" %}">
-</head>
+
 {% block title %}{% trans "LibShare!" %}{% endblock %}
 
 {% block content %}
-
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "css/structure.css" %}">
+</head>
 
 <form action="" method="post" class="box login">
 	{% csrf_token %}
