@@ -17,7 +17,7 @@ body{
 html {
 	margin: 0;
 	padding: 0;
-	background: #eff3f6 url('../4.jpg') center top repeat;
+	background: #eff3f6 url('4.jpg') center top repeat;
 }
 
 
@@ -39,7 +39,7 @@ html {
 }
 .box.login
 {
-	height:260px;
+	height:270px;
         width:332px;
 	position:absolute;
 	

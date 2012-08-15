@@ -6,15 +6,10 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}">
 <link rel="stylesheet" type="text/css" href="{% static "css/structure_base.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/structure_profile_detail.css" %}">
 </head>
 
 <body>
-<div id="content">
-{% block content %}{% endblock %}
-</div>
-<footer id="main">
-  <a href="/">Share your books!</a> | <a href="http://openhackindia2012.hacker.yahoo.net/#groups/72566">Team Fifteen</a>
-</footer>
 <div id="navwrapper">  
       
         <ul id="nav" class="floatleft">  
@@ -24,13 +19,19 @@
         </ul>  
           
         <ul id="nav" class="floatright">  
-            <li><a href="">Edit Profile</a></li>  
+            <li><a href="{% url 'userena_profile_edit' user.username %}">Edit Profile</a></li>  
             <!--<li><a href="#">username@yahoo.com</a></li>-->  
             <li><a href="#">Logout</a></li>  
         </ul>  
           
         <br class="clear">  
       
-    </div>
+</div>
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+<footer id="main">
+  <a href="/">Share your books!</a> | <a href="http://openhackindia2012.hacker.yahoo.net/#groups/72566">Team Fifteen</a>
+</footer>
 </body>
 </html>

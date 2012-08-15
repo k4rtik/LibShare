@@ -137,7 +137,7 @@ class AuthenticationForm(forms.Form):
     A custom form where the identification can be a e-mail address or username.
 
     """
-    identification = identification_field_factory(_(u"Email or username"),
+    identification = identification_field_factory(_(u"Email/Username"),
                                                   _(u"Either supply us with your email or username."))
     password = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput(attrs=attrs_dict, render_value=False))

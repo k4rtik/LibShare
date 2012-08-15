@@ -1,32 +1,56 @@
 {% extends 'userena/base_userena.html' %}
+{% load staticfiles %}
 {% load i18n %}
 {% load url from future %}
 
-{% block title %}{% trans "Signin" %}{% endblock %}
+{% block title %}{% trans "LibShare!" %}{% endblock %}
 
 {% block content %}
-<form action="" method="post">
-  {% csrf_token %}
-  <fieldset>
-    <legend>{% trans "Signin" %}</legend>
-    {{ form.non_field_errors }}
-    {% for field in form %}
-    {{ field.errors }}
-    {% comment %} Displaying checkboxes differently {% endcomment %}
-    {% if field.name == 'remember_me' %}
-    <p class="checkbox">
-    <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label>
-    </p>
-    {% else %}
-    <p>
-    {{ field.label_tag }}
-    {{ field }}
-    </p>
-    {% endif %}
-    {% endfor %}
-  </fieldset>
-  <input type="submit" value="{% trans "Signin" %}" />
-  <p class="forgot-password"><a href="{% url 'userena_password_reset' %}" title="{% trans 'Forgot your password?' %}">{% trans "Forgot your password?" %}</a></p>
-  {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "css/structure.css" %}">
+</head>
+
+<form action="" method="post" class="box login">
+	{% csrf_token %}
+	<fieldset class="boxBody">
+	  <legend></legend>
+    	  {{ form.non_field_errors }}
+          {% for field in form %}
+          {{ field.errors }}
+          {% comment %} Displaying checkboxes differently {% endcomment %}
+          {% if field.name == 'remember_me' %}
+          <p class="checkbox">
+          <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label>
+          </p>
+	  <label><a href="{% url 'userena_password_reset' %}" class="rLink" tabindex="5">Forgot password?</a></label>
+          {% else %}
+          <p>
+          {{ field.label_tag }}
+          {{ field }}
+          </p>
+          {% endif %}
+          {% endfor %}
+	  
+	</fieldset>
+	<footer>
+	 
+	<input type="submit" class="btnLogin" tabindex="4" value="{% trans "Sign In" %}" />
+ 
+ 	 {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+	</footer>
+</form>
+<form class="box register">
+	<fieldset class="boxBody">
+	  <label>New to LibShare? Sign up!</label>
+	  <input type="text" tabindex="1" placeholder="username" required>
+	  <label></label>
+	  <input type="text" tabindex="1" placeholder="email" required>
+	  <label></label>
+	  <input type="password" tabindex="2" placeholder="password" required>
+ 	</fieldset>
+	<footer>
+	  <label><input type="checkbox" tabindex="3">I accept!</label>
+	  <input type="submit" class="btnRegister" value="Register!" tabindex="4">
+	</footer>
 </form>
 {% endblock %}

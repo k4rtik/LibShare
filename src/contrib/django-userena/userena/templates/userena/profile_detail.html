@@ -1,58 +1,104 @@
 {% extends 'userena/base_userena.html' %}
+{% load staticfiles %}
 {% load i18n %}
 {% load url from future %}
-
-{% block title %}{% blocktrans with profile.user.username as username %}{{ username }}'s profile.{% endblocktrans %}{% endblock %}
-{% block content_title %}<h2>{{ profile.user.username }} {% if profile.user.get_full_name %}({{ profile.user.get_full_name }}){% endif %}</h2>{% endblock %}
-
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "/css/structure_profile_detail.css" %}">
+</head>
 {% block content %}
-  <div class="white-box">
-    {% block profile_navigation %}
-      {% comment %}Dirty hack. Will use django-guardian in the future.{% endcomment %}
-      {% if user.username == profile.user.username %}
-        <ul id="box-nav">
-          {% block profile_navigation_items %}
-            <li><a href="{% url 'userena_profile_detail' user.username %}">{% trans "View profile" %}</a></li>
-            <li><a href="{% url 'userena_profile_edit' user.username %}">{% trans "Edit details" %}</a></li>
-            <li><a href="{% url 'userena_password_change' user.username %}">{% trans "Change password" %}</a></li>
-            <li><a href="{% url 'userena_email_change' user.username %}">{% trans "Change email" %}</a></li>
-          {% endblock %}
-        </ul>
-      {% endif %}
-    {% endblock %}
 
-    <div id="details">
-      {% block profile_details %}
-        <img class="mugshot" src="{{ profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
-        <dl>
+<body>	
+{% block profile_details %}
+   
+	<dl>
           {% block profile_definition_list %}
-            {% if profile.user.get_full_name %}
-              <dt>{% trans "Name" %}</dt>
-              <dd>{{ profile.user.get_full_name }}</dd>
-            {% endif %}
-            {% if profile.user.email and not hide_email %}
-              <dt>{% trans "Email" %}</dt>
-              <dd>{{ profile.user.email }}</dd>
-            {% endif %}
-            {% if profile.age %}
-              <dt>{% trans "Age" %}</dt>
-              <dd>{{ profile.age }}</dd>
-            {% endif %}
-            {% if profile.website %}
-              <dt>{% trans "Website" %}</dt>
-              <dd>{{ profile.website|urlize }}</dd>
-            {% endif %}
-            {% if profile.location %}
-              <dt>{% trans "Location" %}</dt>
-              <dd>{{ profile.location }}</dd>
-            {% endif %}
+                      
             {% if profile.about_me %}
-              <dt>{% trans "About me" %}</dt>
-              <dd>{{ profile.about_me }}</dd>
             {% endif %}
           {% endblock %}
         </dl>
       {% endblock %}
     </div>
   </div>
+	
+	
+	<div id="content" class="clearfix">
+		<section id="left">
+			<div id="userStats" class="clearfix">
+				<div class="pic">
+					<a href="!"><img src="{{ profile.get_mugshot_url }}" width="150" height="150" /></a>
+				</div>
+				
+				<div class="data">
+					<h1>Hi! {{ profile.user.username }}</h1>
+					<h2>{{ profile.user.email }}</h2>
+					<h3>{{ profile.website|urlize }}</h3>
+					<h4>{{ profile.location }}</h4>
+					<div class="socialMediaLinks">
+						
+						
+					</div>
+					<div class="sep"></div>
+					<ul class="numbers clearfix">
+						<li>Books<strong>18</strong></li>
+						<li>Shared<strong>6</strong></li>
+						<li class="nobrdr">Rank<strong>23</strong></li>
+					</ul>
+				</div>
+			</div>
+			
+			<h1>About Me:</h1>
+			<p>{{ profile.about_me }}</p>
+		</section>
+		
+		<section id="right">
+			
+			<div class="gcontent">
+			<form action="/search/" method="get">
+			<input type="text" name="q">
+			<input type="submit" value="Search">
+			</form>
+			</div>
+			
+			
+			<div class="gcontent">
+				<div class="head"><h1>Shared books</h1></div>
+				<div class="boxy">
+					
+					
+					<div class="friendslist clearfix">
+						<div class="friend">
+							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Jerry K." /></a><span class="friendly"><a href="#">Jerry K.</a></span>
+						</div>
+						
+						<div class="friend">
+							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Katie F." /></a><span class="friendly"><a href="#">Katie F.</a></span>
+						</div>
+						
+						<div class="friend">
+							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Ash K." /></a><span class="friendly"><a href="#">Ash K.</a></span>
+						</div>
+						
+						<div class="friend">
+							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Sponge B." /></a><span class="friendly"><a href="#">Sponge B.</a></span>
+						</div>
+						
+						<div class="friend">
+							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Frank" /></a><span class="friendly"><a href="#">Frank</a></span>
+						</div>
+						
+						<div class="friend">
+							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Alexa S." /></a><span class="friendly"><a href="#">Alexa S.</a></span>
+						</div>
+					</div>
+					
+					<span><a href="#">See all...</a></span>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
+
+
 {% endblock %}
